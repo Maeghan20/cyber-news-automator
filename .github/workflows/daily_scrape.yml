@@ -16,6 +16,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install feedparser supabase google-generativeai python-dotenv
       - name: Run Scraper
+        working-directory: ./ 
         run: python scrape_news.py
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

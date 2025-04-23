@@ -14,10 +14,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install feedparser supabase openai
+          pip install feedparser supabase google-generativeai python-dotenv
       - name: Run Scraper
         run: python scrape_news.py
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}  # Changed from OPENAI_KEY
